@@ -31,23 +31,26 @@ v10 | v12
 
 <h3 align="center">Index</h3>
 
-- [Folder Structure](#folder-structure)
-- [About](#about)
-- [To figure out](#to-figure-out)
-- [Into the code](#into-the-code)
-- [Bonus part](#bonus-part)
-- [Evaluation](#evaluation)
-  - [Testing mandatory part](#testing-mandatory-part)
-  - [Testing bonus part](#testing-bonus-part)
-  - [Tester](#tester)
-  - [Correction sheet](#correction-sheet)
-  - [Norminette Result](#norminette-result)
-  - [Moulinette Result](#moulinette-result)
-- [Treasure hunt](#treasure-hunt)
-- [Support Me](#support-me)
-- [Skills developed](#skills-developed)
-- [Sources](#sources)
-- [License](#license)
+<p align="center">
+  <a href="#folder-structure">Folder Structure</a><br>
+  <a href="#about">About</a><br>
+  <a href="#to-figure-out">To Figure Out</a><br>
+  <a href="#into-the-code">Into The Code</a><br>
+  <a href="#bonus-part">Bonus Part</a><br>
+  <a href="#evaluation">Evaluation</a><br>
+  <a href="#testing-mandatory-part">Testing Mandatory Part</a><br>
+  <a href="#testing-bonus-part">Testing Bonus Part</a><br>
+  <a href="#tester">Tester</a><br>
+  <a href="#correction-sheet">Correction Sheet</a><br>
+  <a href="#norminette-result">Norminette Result</a><br>
+  <a href="#moulinette-result">Moulinette Result</a><br>
+  <a href="#treasure-hunt">Treasure Hunt</a><br>
+  <a href="#support-me">Support Me</a><br>
+  <a href="#skills-developed">Skills Developed</a><br>
+  <a href="#sources">Sources</a><br>
+  <a href="#license">License</a><br>
+  <a href="#author">Author</a>
+</p>
 
 
 <br>
@@ -361,11 +364,11 @@ The output should be: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/bl
 
 ### Correction sheet
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs3.png">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs3.png">
 
 <br>
 
@@ -383,7 +386,7 @@ get_next_line_bonus.h: OK!
 
 ### Moulinette Result
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/Moulinette_gnl.png">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/Moulinette_gnl.png">
 
 <br>
 
@@ -442,3 +445,14 @@ If you want to support me:</p>
 <a href="https://opensource.org/licenses/"><img src="https://img.shields.io/badge/License-GPL%20v3-yellow.svg" alt="GPLv3 License"></a>
 <a href="http://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/license-AGPL-blue.svg" alt="AGPL License"></a>
 <br>
+
+## Author
+
+<p align="center"><a href="https://profile.intra.42.fr/users/fcorvaro"><img style="height:auto;" src="https://avatars.githubusercontent.com/u/102758065?v=4" width="100" height="100"alt=""></a>
+<p align="center">
+<a href="mailto:fcorvaro@student.42roma.it"><kbd>Email</kbd><alt=""></a>
+<a href="https://github.com/f-corvaro"><kbd>Github</kbd><alt=""></a>
+<a href="https://www.linkedin.com/in/f-corvaro/"><kbd>Linkedin</kbd><alt=""></a>
+<a href="https://42born2code.slack.com/team/U050L8XAFLK"><kbd>Slack</kbd><alt=""></a>
+
+<hr/>
