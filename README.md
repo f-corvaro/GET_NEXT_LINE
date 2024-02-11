@@ -14,13 +14,17 @@
     <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/f-corvaro/GET_NEXT_LINE?color=yellow" /></a>
 </p>
 
-<p align="center">
+<div align="center">
 
 v10 | v12
 :-------------------------:|:-------------------------:
 [![subject-old](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject.pdf) | [![subject-new](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject(new).pdf)
 
+</div>
+
+<div align="center">
 <table><tr><td>This guide is made for the subject v10, there aren't differences between the two subjects</td></tr></table>
+</div>
 
 </p>
 <br>
