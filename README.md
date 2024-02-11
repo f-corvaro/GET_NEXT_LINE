@@ -1,38 +1,31 @@
 <h1 align="center">GET_NEXT_LINE</h1>
 
-<p align="center">
-  <a href="https://github.com/f-corvaro/42.common_core/tree/main/01-get_next_line">
-  <src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/get_next_line_intra.png">
-  </a>
-</p>
+<div align="center">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/get_next_line_intra.png"></a>
+</div>
 
 <p align="center">
 	<b><i>"Line-by-Line File Reader"</i></b><br>
 </p>
 <p align="center" style="text-decoration: none;">
-    <a href="https://github.com/f-corvaro/LIBFT/blob/main/.extra/en.subject.pdf"><img alt="subject" src="https://img.shields.io/badge/subject-libft-yellow" /></a>
-    <a href="https://github.com/f-corvaro/LIBFT"><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/f-corvaro/LIBFT?color=blueviolet" /></a>
-    <a href="https://github.com/f-corvaro/LIBFT"><img alt="Code language count" src="https://img.shields.io/github/languages/count/f-corvaro/LIBFT?color=yellow" /></a>
-    <a href="https://github.com/f-corvaro/LIBFT"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/f-corvaro/LIBFT?color=blueviolet" /></a>
-    <a href="https://github.com/f-corvaro/LIBFT"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/f-corvaro/LIBFT?color=yellow" /></a>
+    <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/f-corvaro/LIBFT?color=blueviolet" /></a>
+    <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="Code language count" src="https://img.shields.io/github/languages/count/f-corvaro/LIBFT?color=yellow" /></a>
+    <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/f-corvaro/LIBFT?color=blueviolet" /></a>
+    <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/f-corvaro/LIBFT?color=yellow" /></a>
 </p>
 
-<h3 align="center">Index</h3>
-
-<a href="https://github.com/f-corvaro/42.common_core/tree/main/01-get_next_line"><img align="center" src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/get_next_line_intra.png">
-
-<p align="justify">
+<p align="center">
 
 v10 | v12
 :-------------------------:|:-------------------------:
-[![subject-old](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/en.subject.pdf) | [![subject-new](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/en.subject(new).pdf)
+[![subject-old](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject.pdf) | [![subject-new](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject(new).pdf)
 
 <table><tr><td>This guide is made for the subject v10, there aren't differences between the two subjects</td></tr></table>
 
 </p>
 <br>
 
-### Index
+<h3 align="center">Index</h3>
 
 - [Folder Structure](#folder-structure)
 - [About](#about)
@@ -127,7 +120,7 @@ It will define the buffer size for ```read()```. The project myst be able to com
 Text segment  (i.e. instructions) -> Initialized data segment-> Uninitialized data segment  (bss) -> Heap -> Stack.
 </p>
 
-<img width="350" src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/C-memory.png">
+<img width="350" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/C-memory.png">
 
 ***Text Segment:*** <p align="justify">Is one of the sections of a program in an object file or in memory, which contains executable instructions. As a memory region, a text segment may be placed below the heap or stack in order to prevent heaps and stack overflows from overwriting it. Usually, the text segment is sharable so that only a single copy needs to be in memory for frequently executed programs, such as text editors, the C compiler, the shells, and so on. Also, the text segment is often read-only, to prevent a program from accidentally modifying its instructions
 </p>
@@ -355,7 +348,7 @@ make a # launch mandatory tests + bonus tests
 
 Keep in mind that you can change the timeout value in Makefile. For rigorous test you should run all tests with valgrid using Linux (e.g. `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s make m`). The tester, for me, worked only in 42. Pay attetion, the tester is NOT the assolute truth, just a second check to the previosly done.
 
-The output should be: [output.txt](https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/output.txt)
+The output should be: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/output.txt)
 
 </p>
 
@@ -364,11 +357,11 @@ The output should be: [output.txt](https://github.com/f-corvaro/42.common_core/b
 
 ### Correction sheet
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/cs1.png">
+<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/cs2.png">
+<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/cs3.png">
+<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs3.png">
 
 <br>
 
@@ -386,7 +379,7 @@ get_next_line_bonus.h: OK!
 
 ### Moulinette Result
 
-<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img src="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line/.extra/Moulinette_gnl.png">
+<a href="https://github.com/f-corvaro/42.common_core/blob/main/01-get_next_line"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/Moulinette_gnl.png">
 
 <br>
 
