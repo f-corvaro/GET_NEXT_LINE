@@ -1,8 +1,6 @@
-<h1 align="center">GET_NEXT_LINE</h1>
-
-<div align="center">
-<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/get_next_line_intra.png"></a>
-</div>
+<h1 align="center">
+<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/gnl.png"></a>
+</h1>
 
 <p align="center">
 	<b><i>"Line-by-Line File Reader"</i></b><br>
