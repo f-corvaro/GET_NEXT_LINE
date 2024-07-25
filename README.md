@@ -30,26 +30,55 @@ v10 | v12
 <h3 align="center">Index</h3>
 
 <p align="center">
-  <a href="#folder-structure">Folder Structure</a><br>
-  <a href="#about">About</a><br>
-  <a href="#to-figure-out">To Figure Out</a><br>
-  <a href="#into-the-code">Into The Code</a><br>
-  <a href="#bonus-part">Bonus Part</a><br>
-  <a href="#evaluation">Evaluation</a><br>
-  <a href="#testing-mandatory-part">Testing Mandatory Part</a><br>
-  <a href="#testing-bonus-part">Testing Bonus Part</a><br>
-  <a href="#tester">Tester</a><br>
-  <a href="#correction-sheet">Correction Sheet</a><br>
-  <a href="#norminette-result">Norminette Result</a><br>
-  <a href="#moulinette-result">Moulinette Result</a><br>
-  <a href="#treasure-hunt">Treasure Hunt</a><br>
-  <a href="#support-me">Support Me</a><br>
-  <a href="#skills-developed">Skills Developed</a><br>
-  <a href="#sources">Sources</a><br>
-  <a href="#author">Author</a>
+ <a href="#introduction-to-get_next_line">Introduction to `get_next_line()`</a><br>
+ <a href="#folder-structure">Folder Structure</a><br>
+ <a href="#project-requirements---mandatory-part">Project Requirements - Mandatory Part</a><br>
+ <a href="#required-files">Required Files</a><br>
+ <a href="#function-prototype">Function Prototype</a><br>
+ <a href="#allowed-external-functions">Allowed External Functions</a><br>
+ <a href="#expected-function-behavior">Expected Function Behavior</a><br>
+ <a href="#compilation-option">Compilation Option</a><br>
+ <a href="#project-requirements---bonus-part">Project Requirements - Bonus Part</a><br>
+ <a href="#theoretical-background">Theoretical Background</a><br>
+ <a href="#string-manipulation">String Manipulation</a><br>
+ <a href="#data-structures">Data Structures</a><br>
+ <a href="#arrays">Arrays</a><br>
+ <a href="#linked-lists">Linked Lists</a><br>
+ <a href="#loop-control-and-flow">Loop Control and Flow</a><br>
+ <a href="#memory-layout-of-c-programs">Memory Layout of C Programs</a><br>
+ <a href="#detailed-segmentation-of-program-memory">Detailed Segmentation of Program Memory</a><br>
+ <a href="#understanding-buffer_size-in-memory-management">Understanding `BUFFER_SIZE` in Memory Management</a><br>
+ <a href="#garbage-collection-and-memory-fragmentation">Garbage Collection and Memory Fragmentation</a><br>
+ <a href="#file-descriptors">File Descriptors</a><br>
+ <a href="#standard-file-descriptors">Standard File Descriptors</a><br>
+ <a href="#error-handling">Error Handling</a><br>
+ <a href="#closing-file-descriptors">Closing File Descriptors</a><br>
+ <a href="#end-of-line-detection">End-of-Line Detection</a><br>
+ <a href="#static-variables">Static Variables</a><br>
+ <a href="#code-optimization">Code Optimization</a><br>
+ <a href="#into-the-code">Into the code</a><br>
+ <a href="#evaluation">Evaluation</a><br>
+ <a href="#testing-mandatory-part">Testing mandatory part</a><br>
+ <a href="#testing-bonus-part">Testing bonus part</a><br>
+ <a href="#testing-with-gnltester">Testing with gnlTester</a><br>
+ <a href="#correction-sheet">Correction Sheet</a><br>
+ <a href="#moulinette-feedback">Moulinette Feedback</a><br>
+ <a href="#developed-skills">Developed Skills</a><br>
+ <a href="#references">References</a><br>
+ <a href="#support-and-contributions">Support and Contributions</a><br>
+ <a href="#author">Author</a><br>
 </p>
+<br>
 
+## Introduction to `get_next_line()`
 
+<p align="justify">
+
+The `get_next_line()` function stands out as an essential tool for reading lines from a file descriptor without prior knowledge of the line's length. This capability is particularly beneficial for processing large files or those with variable line lengths. Upon execution, it returns a pointer to a buffer that contains the read line, or `NULL` if no more lines are available. This function is a significant addition to our library (LIBFT), enhancing our file handling capabilities.
+
+Key concepts central to this project include understanding static variables and the intricacies of file descriptor management. The use of global variables, the `GET_NEXT_LINE` function itself, and `lseek()` are strictly prohibited to ensure compliance with project guidelines. Moreover, the function is designed to handle errors gracefully, preventing unexpected terminations such as segmentation faults, bus errors, double frees, and other undefined behaviors. It is imperative to manage heap-allocated memory efficiently, ensuring proper release when no longer needed. Through iterative calls, the `get_next_line` function facilitates the sequential reading of a text file associated with a given file descriptor, one line at a time.
+
+</p>
 <br>
 
 ## Folder Structure
@@ -74,128 +103,264 @@ v10 | v12
 
 <br>
 
+## Project Requirements - Mandatory Part
 
-## About
-
-<p align="justify">
-
-The `get_next_line()` function is a particularly useful function, as it allows you to read a line of text from a file descriptor without having to know the length of the line in advance. This function is often used to read lines of text from files that are very large or that contain a variable number of lines. The function returns a pointer to the buffer containing the line read, or NULL if there are no more lines to read. Is a very important function that will help us in the future, so we will adding this new one function to the our library (GET_NEXT_LINE). The concept to understand for this project is about the static variables and the use of file descriptor. Is forbidden to use global variables, to use GET_NEXT_LINE function and lseek(). The function should not quit unexpectedly (segmentation fault, bus error, double free, etc) apart from undefined behaviors. All heap allocated memory space must be properly freed when necessary. The repeated calls, e.g. using a loop, to our get_next_line function should let us read the text file pointed to the file descriptor, one line at a time
-
-</p>
-
-<br>
-
-**Files to turn in it:** <p align="justify">
-```get_next_line.c, get_next_line.h and get_next_line_utils.c``` (where we can add all the helper functions)
-
-</p>
-
-
-**Prototype of the function:** <p align="justify">
-```char *get_next_line(int fd)```;
-Where fd is the file descriptor to read from
-
-</p>
-
-**External functions allowed:** <p align="justify">
-```free(), malloc(), read()```
-
-</p>
-
-**Expected return:** <p align="justify">
-The function will return the read line correctly or will return ```NULL``` if there is nothing to read, or an error occured. ***Please note*** that the returned line should include the terminating ```\n``` character, except if the end of file was reached and does not end with a ```\n``` character
-
-</p>
-
-**Option to add at compiler call:** <p align="justify">
-```-D BUFFER_SIZE=n```.
-It will define the buffer size for ```read()```. The project myst be able to compile with and without the additional flag used. You can choose the default value of your choice.
-
-</p>
-
-<br>
-
-## To figure out
+### Required Files 
 
 <p align="justify">
 
-**Memory layout of C programs:** typically is divided in these sections.
-<p align="justify">
-Text segment  (i.e. instructions) -> Initialized data segment-> Uninitialized data segment  (bss) -> Heap -> Stack.
+Submit the following files:
+- `get_next_line.c`: Contains the core logic for the `get_next_line` function.
+- `get_next_line.h`: The header file, which includes the prototype of `get_next_line` and any necessary includes.
+- `get_next_line_utils.c`: This file may contain any helper functions used by your `get_next_line` implementation.
+
 </p>
 
-<img width="350" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/C-memory.png">
-
-***Text Segment:*** <p align="justify">Is one of the sections of a program in an object file or in memory, which contains executable instructions. As a memory region, a text segment may be placed below the heap or stack in order to prevent heaps and stack overflows from overwriting it. Usually, the text segment is sharable so that only a single copy needs to be in memory for frequently executed programs, such as text editors, the C compiler, the shells, and so on. Also, the text segment is often read-only, to prevent a program from accidentally modifying its instructions
-</p>
-
-***Initialized Data Segment:*** <p align="justify"> A data segment is a portion of the virtual address space of a program, which contains the global variables and static variables that are initialized by the programmer.
-Note that, the data segment is not read-only, since the values of the variables can be altered at run time.
-This segment can be further classified into the initialized read-only area and the initialized read-write area.
-
-***Uninitialized Data Segment:*** <p align="justify"> called also the “bss” segment. Data in this segment is initialized by the kernel to arithmetic 0 before the program starts executing uninitialized data starts at the end of the data segment and contains all global variables and static variables that are initialized to zero or do not have explicit initialization in source code. For instance, a variable declared static int i; would be contained in the BSS segment. For instance, a global variable declared int j; would be contained in the BSS segment
-
-***Stack:*** <p align="justify"> The stack area traditionally adjoined the heap area and grew in the opposite direction; when the stack pointer met the heap pointer, free memory was exhausted. (With modern large address spaces and virtual memory techniques they may be placed almost anywhere, but they still typically grow in opposite directions). The stack area contains the program stack, a LIFO structure, typically located in the higher parts of memory. On the standard PC x86 computer architecture, it grows toward address zero; on some other architectures, it grows in the opposite direction. A “stack pointer” register tracks the top of the stack; it is adjusted each time a value is “pushed” onto the stack. The set of values pushed for one function call is termed a “stack frame”; A stack frame consists at minimum of a return address. Stack, where automatic variables are stored, along with information that is saved each time a function is called. Each time a function is called, the address of where to return to and certain information about the caller’s environment, such as some of the machine registers, are saved on the stack. The newly called function then allocates room on the stack for its automatic variables. This is how recursive functions in C can work. Each time a recursive function calls itself, a new stack frame is used, so one set of variables doesn’t interfere with the variables from another instance of the function
-
-***Heap:*** <p align="justify"> Heap is the segment where dynamic memory allocation usually takes place.
-The heap area begins at the end of the BSS segment and grows to larger addresses from there. The Heap area is managed by malloc, realloc, and free, which may use the brk and sbrk system calls to adjust its size (note that the use of brk/sbrk and a single “heap area” is not required to fulfill the contract of malloc/realloc/free; they may also be implemented using mmap to reserve potentially non-contiguous regions of virtual memory into the process’ virtual address space). The Heap area is shared by all shared libraries and dynamically loaded modules in a process
-<br>
-
-**Static variables:** <p align="justify"> have the properties of preserving their value after they are out of their scope and makes the variable retain its value among multiple calls. A static int variable remains in memory while the program is running. A normal variable is destroyed when a function call where the variable was declared is over (e.g. the static int is used to count the number of times a function is called). Static variables are allocated memory in the data segment, not the stack segment. Static variables should not be declared inside a structure. The reason is C compiler requires the entire structure elements to be placed together that is why memory allocation for structure members should be contiguous. It is possible to declare structure inside the function (stack segment) or allocate memory dynamically(heap segment) or it can be even global (BSS or data segment). Whatever might be the case, all structure members should reside in the same memory segment because the value for the structure element is fetched by counting the offset of the element from the beginning address of the structure. Separating out one member alone to a data segment defeats the purpose of structure and it is possible to have an entire structure as static.
-</p>
-
-<br>
-
-## Into the code
+### Function Prototype
 
 <p align="justify">
 
-In this project it will be something new to use:
-1. `ssize_t` is used for a count of bytes or an error indication (-1). It is a signed integer type capable of storing values at least in the range [-1, SSIZE_MAX]
-2. `ssize_t read(int fd, void *buf, size_t count);` The function `read()` in C reads data from a file descriptor and stores it in a buffer. The function returns the number of bytes read, or -1 in case of an error. count is the maximum number of bytes reads
-3. `open()` function in C opens a file for reading, writing or both. It returns a file descriptor, which is a small, non-negative integer that is used to access the file. It return -1 if error occur. The syntax is `int open(const char *pathname, int flags);` where pathname is the path to the file to open. the flags are the file opening options. To combine different flags is used `|` operator
-`O_RDONLY`: Opens the file in read-only mode
-`O_WRONLY`: Opens the file in write-only modn change the timeout value in Makefile. For rigorous test you should run all tests with valgrid using Linuxe
-`O_RDWR`: Opens the file in read-write mode
-`O_CREAT`: Creates the file if it does not already exist
-`O_TRUNC`: Truncates the file to zero bytes if it already exists
-4. The `BUFFER_SIZE` is set to 1000 in `get_next_line.h` because it is a good compromise between memory usage and performance. A larger buffer size will allow the function to read more data at once, which can improve performance, but it will also use more memory. A smaller buffer size will use less memory, but it may also decrease performance. The value of 1000 is a good starting point for most cases. If you are finding that the function is not reading enough data at once, you can try increasing the BUFFER_SIZE. However, if you are finding that the function is using too much memory, you can try decreasing the `BUFFER_SIZE`. A buffer is a region of memory used to temporarily store data while it is being moved from one place to another. Buffers are typically used when there is a difference between the rate at which data is received and the rate at which it can be processed. For example, when you download a file from the internet, your computer will store the incoming data in a buffer until it has enough data to save it to disk. Similarly, when you watch a streaming video, your computer will buffer the video data so that it can continue to play smoothly even if the network connection is slow. The buffer size is the amount of memory that is allocated to the buffer. It is important to choose a buffer size that is large enough to store enough data to avoid interruptions, but not so large that it wastes memory
+The prototype for the `get_next_line` function is as follows:
+- `char *get_next_line(int fd);`
+  - `fd` is the file descriptor from which to read.
+
 </p>
 
-<br>
-
-## Bonus part
+### Allowed External Functions
 
 <p align="justify">
 
-The requirements of the bonus parts are to develop `get_next_line()` using only one static variable. In addition to the mandatory part files, you will turn in the 3 following files: `get_next_line_bonus.c, get_next_line_bonus.h, get_next_line_utils_bonus.c`.
-The bonus part will only be assessed if the mandatory part is
-PERFECT. Perfect means the mandatory part has been integrally done
-and works without malfunctioning. If you have not passed ALL the
-mandatory requirements, your bonus part will not be evaluated at all. The `get_next_line()` function can manage multiple fd at the same time. For example, if you can read from the file descriptors 3, 4 and 5, you should be able to read from a different fd per call without losing the reading thread of each file descriptor or returning a line from another fd. `static char	*str[4096];` was choosen because the C standard requires that a compiler be able to process lines of at least 4096 characters. However, most modern compilers have no upper limit on the size of a line, other than the amount of available memory.
+You may only use the following external functions within your project:
+- `free()`
+- `malloc()`
+- `read()`
 
 </p>
 
+### Expected Function Behavior
+
+<p align="justify">
+
+- **Return Value**: The function should return the line that has been read. If there is nothing left to read or an error occurs, it should return `NULL`.
+- **Line Termination**: The returned line must include the terminating newline character (`\n`), except in cases where the end of the file is reached and it does not end with a newline character.
+
+</p>
+
+### Compilation Option
+
+<p align="justify">
+
+- Use the `-D BUFFER_SIZE=n` option when compiling your project. This option defines the buffer size for the `read()` function. Your project must compile both with and without this flag. You are free to choose a default buffer size that suits your implementation.
+
+</p>
 <br>
 
-## Evaluation
+## Project Requirements - Bonus Part
+
+<p align="justify">
+
+The bonus section of this project introduces an advanced challenge: implementing the `get_next_line()` function with the constraint of using only a single static variable. This requirement pushes the boundaries of efficient memory and state management within your code. For the bonus evaluation, you are expected to submit three specific files: `get_next_line_bonus.c`, `get_next_line_bonus.h`, and `get_next_line_utils_bonus.c`.
+
+It's crucial to understand that the bonus part will be considered only if the mandatory section of the project is flawlessly completed. "Flawless" implies that every aspect of the mandatory requirements has been fully met and functions correctly without any issues. If the mandatory criteria are not entirely satisfied, the bonus submissions will not be reviewed.
+
+A key feature of the bonus `get_next_line()` function is its ability to handle multiple file descriptors (fd) simultaneously. This means that if you're reading from file descriptors 3, 4, and 5, the function should be capable of maintaining the reading sequence for each fd independently, allowing for seamless switching between fds without losing track of their respective reading positions. The choice of `static char *str[4096];` as the static variable is strategic, aligning with the C standard that mandates compilers to support line lengths of at least 4096 characters. This decision, while adhering to the standard, also takes into consideration the capabilities of modern compilers, which typically do not impose a limit on line size, bounded only by the constraints of available memory.
+
+</p>
+<br>
+
+## Theoretical Background
+
+<p align="justify">
+
+The `get_next_line` project involves several key concepts and system calls that are pivotal for handling file operations in C. It builds upon foundational knowledge from the C piscine and LIBFT project, including:
+
+</p>
+
+### Data Structures
+
+<p align="justify">
+
+Data structures are an essential component of the `get_next_line` project. They provide a way to organize and store data efficiently, allowing for easy access and manipulation. In the context of `get_next_line`, data structures can be used to store the lines read from a file, ensuring that they are easily accessible for further processing. One commonly used data structure for this purpose is a linked list.
+
+</p>
+
+#### Arrays
+
+<p align="justify">
+
+Arrays are a fundamental data structure in programming, allowing for the storage of multiple elements of the same type in a contiguous block of memory. In the context of the `get_next_line` project, arrays can be used to store and manipulate characters read from a file. By allocating an array with a fixed size, the function can efficiently read and process chunks of data from the file, ensuring that the lines are correctly extracted. Arrays provide random access to elements, allowing for easy indexing and retrieval of specific characters. Additionally, arrays can be used to store and manage pointers to dynamically allocated memory, ensuring efficient memory management within the `get_next_line` implementation. 
+
+</p>
+
+#### Linked Lists
+
+<p align="justify">
+
+Linked lists are a valuable data structure for managing and organizing data in the `get_next_line` project. They offer dynamic memory allocation, efficient insertion and deletion operations, and the ability to handle variable-length data. Each node in a linked list represents a line of text, and the nodes are connected through pointers, allowing for easy traversal and manipulation of the data. By utilizing linked lists in the `get_next_line` implementation, the function can effectively manage and process the lines read from the file, ensuring efficient storage and retrieval of the data.
+
+</p>
+<br>
+
+### String Manipulation
+
+<p align="justify">
+
+String manipulation is a fundamental aspect of the `get_next_line` project. The function is designed to read a file line by line, and string manipulation techniques are essential for processing and extracting the desired data. Functions like `strlen`, `strcpy`, `strcat`, and `strncpy` can be used to manipulate strings, allowing for operations such as finding the length of a string, copying or concatenating strings, and extracting substrings. Additionally, functions like `strchr` and `strstr` can be used to search for specific characters or substrings within a string. Understanding and effectively utilizing these string manipulation functions is crucial for implementing the `get_next_line` function and achieving accurate and efficient file reading functionality.
+
+</p>
+<br>
+
+### Loop Control and Flow
+
+<p align="justify">
+
+Loop control and flow are essential concepts in the `get_next_line` project. The `get_next_line` function needs to read a file line by line, and loop control is used to iterate through the file and extract each line. A common approach is to use a `while` loop that continues until the end of the file is reached or an error occurs. Within the loop, the function reads characters from the file and checks for end-of-line characters to identify the end of each line. Once a line is extracted, it can be processed or stored for further use. Loop control and flow ensure that the `get_next_line` function operates correctly, reading and processing each line in the file until the end is reached or an error occurs.
+
+</p>
+<br>
+
+### Memory Layout of C Programs
+
+<p align="justify">
+
+The memory architecture of C programs is intricately designed, comprising several segments that each play an important role in the program's lifecycle. This architecture is not just a foundation for efficient program execution but also a bulwark for implementing security measures to safeguard the program's memory space.
+
+</p>
+
+#### Detailed Segmentation of Program Memory
+
+<p align="justify">
+
+- **Text Segment**: Also known as the code segment, this area houses the executable instructions of the program. It's typically marked as read-only to prevent tampering with the program's code during execution. Sharing this segment between processes optimizes memory usage, especially for frequently used programs.
+
+- **Initialized Data Segment**: This segment stores global and static variables that have been explicitly initialized by the programmer. Unlike the text segment, this area is writable, enabling runtime modifications of these variables. It's further divided into read-only and read-write sections based on the initialization characteristics.
+
+- **Uninitialized Data Segment (BSS)**: Standing for "Block Started by Symbol," the BSS segment encompasses global and static variables that are either uninitialized or initialized to zero. The operating system zeroes out this segment before the program starts, ensuring a clean slate for these variables.
+
+- **Heap**: The heap area is dedicated to dynamic memory allocation, controlled at runtime through functions like `malloc`. It expands upwards towards higher memory addresses, providing a flexible space for memory allocation as required by the program's execution dynamics.
+
+- **Stack**: In contrast, the stack segment caters to static memory allocation, which includes local variables, function parameters, and return addresses. It grows in the opposite direction of the heap, downwards towards lower memory addresses. The stack is essential for the orderly execution of function calls and returns, with each call generating a new frame on the stack.
+
+Understanding the nuanced interplay between these segments is crucial for C programmers. It aids in optimizing memory usage, debugging complex issues, and fortifying programs against common security threats like buffer overflows.
+
+</p>
+
+#### Understanding `BUFFER_SIZE` in Memory Management
+
+<p align="justify">
+
+The `BUFFER_SIZE` parameter plays a pivotal role in memory management, particularly in functions that read from files or streams. It determines the size of the buffer, in bytes, that a program allocates for reading data. This parameter directly influences the efficiency and performance of data handling operations. A larger `BUFFER_SIZE` can reduce the number of read operations required by allowing more data to be read in a single operation, potentially speeding up the process for large files. However, it also means higher memory consumption, which might not be ideal for memory-constrained environments. Conversely, a smaller `BUFFER_SIZE` minimizes memory usage but can lead to increased read operations, which might slow down the program due to the overhead associated with each read call. Balancing the `BUFFER_SIZE` is thus essential for optimizing both performance and memory usage, making it a critical consideration in the design and implementation of efficient C programs.
+
+</p>
+
+#### Garbage Collection and Memory Fragmentation
+
+<p align="justify">
+
+Unlike languages with built-in garbage collection mechanisms, C requires manual memory management. Programmers must explicitly allocate and free memory using functions like `malloc` and `free`. This approach necessitates a disciplined management strategy to avoid memory leaks, where unneeded memory is not reclaimed, potentially leading to inefficient memory use and exhaustion of resources. 
+
+Memory fragmentation is another challenge in memory management, manifesting in two forms: external and internal fragmentation. External fragmentation occurs when free memory is split into small, scattered blocks, making it difficult to find a contiguous block for new allocations despite having sufficient total free memory. Internal fragmentation happens when allocated memory blocks are larger than necessary, leading to wasted space within those blocks. Addressing these issues involves strategies like memory compaction, using memory pools, or custom allocators to minimize wasted space and improve allocation efficiency. Incorporating an understanding of these concepts is vital for optimizing memory usage and managing the complexities of dynamic memory allocation in C programs.
+
+</p>
+<br>
+
+### File Descriptors
+
+<p align="justify">
+
+In the context of the `get_next_line` project, file descriptors play a crucial role in reading data from files. A file descriptor is a unique identifier assigned by the operating system to each open file. It serves as a reference to the file when performing operations like reading or writing. In the `get_next_line` function, file descriptors are used to specify the source from which data should be read. By passing the appropriate file descriptor as a parameter to the `read` function, the function can retrieve data from the specified file. `read` function allows data to be read from a file descriptor into a buffer. The `read` function takes three parameters: the file descriptor, a pointer to the buffer where the data will be stored, and the maximum number of bytes to read. It returns the number of bytes read, which can be zero at the end of the file or -1 in case of an error. By calling the `read` function in a loop, the `get_next_line` function can read the file line by line, processing the data as needed. This allows the `get_next_line` function to handle multiple file descriptors simultaneously, maintaining the reading sequence for each file independently. Understanding file descriptors is essential for efficient file handling and ensuring the correct retrieval of data in the `get_next_line` implementation.
+
+</p>
+
+#### Standard File Descriptors
+
+<p align="justify">
+
+There are three standard file descriptors that are automatically opened when a program starts:
+- **Standard Input (stdin)**: File descriptor 0, used for reading input.
+- **Standard Output (stdout)**: File descriptor 1, used for writing output.
+- **Standard Error (stderr)**: File descriptor 2, used for writing error messages.
+
+</p>
+
+#### Error Handling
+
+<p align="justify">
+
+When working with file descriptors, it is important to handle errors appropriately. Functions like `open` and `read` return `-1` if an error occurs. Checking the return values of these functions and using `errno` to determine the specific error can help in diagnosing and handling issues effectively. By implementing robust error handling mechanisms, the `get_next_line` function can handle unexpected situations and ensure the reliability and stability of the file reading process.
+
+</p>
+
+#### Closing File Descriptors
+
+<p align="justify">
+
+To prevent resource leaks, it is crucial to close file descriptors when they are no longer needed. The `close` function is used for this purpose. Failing to close file descriptors can lead to a situation where the system runs out of file descriptors, preventing new files from being opened.
+
+By incorporating these additional details, you gain a more comprehensive understanding of file descriptors, their standard types, error handling, and the importance of proper resource management in the `get_next_line` project.
+
+</p>
+<br>
+
+### End-of-Line Detection
+
+<p align="justify">
+
+End-of-line detection involves identifying the end of a line in a file and extracting the line for further processing. In many text files, lines are terminated by special characters, such as the newline character (`\n`). The `get_next_line` function needs to detect these end-of-line characters and extract the corresponding line. This can be achieved by reading the file character by character and checking for the presence of end-of-line characters. Once an end-of-line character is detected, the function can extract the line and return it for further processing. End-of-line detection is crucial for accurately reading and processing text files in the `get_next_line` project, ensuring that lines are correctly identified and processed.
+
+</p>
+<br>
+
+### Static Variables
+
+<p align="justify">
+
+Static variables play a crucial role in the implementation of the `get_next_line` function. A static variable is a variable that retains its value across multiple function calls. In the context of `get_next_line`, static variables are used to keep track of the current position in the file and the buffer that stores the read data. By declaring these variables as static, their values are preserved between function calls, allowing the function to resume reading from where it left off. This is particularly useful when reading large files or when the function is called multiple times to read from different files. Static variables provide a convenient way to maintain state within the function without the need for global variables, ensuring encapsulation and modularity. Understanding the concept of static variables is essential for effectively implementing the `get_next_line` function and achieving efficient and reliable file reading functionality.
+
+</p>
+<br>
+
+### Code Optimization
+
+<p align="justify">
+
+Code optimization is an important consideration in the `get_next_line` project to ensure efficient and performant file reading. Optimizing the code involves identifying and eliminating any unnecessary operations or redundant code that may impact the overall performance. Techniques like loop unrolling, reducing function calls, and minimizing memory allocations can significantly improve the execution speed and resource usage of the `get_next_line` function. Additionally, optimizing the algorithm used for reading and processing the file can lead to significant performance gains. By carefully analyzing the code and making targeted optimizations, the `get_next_line` function can achieve optimal performance and enhance the overall efficiency of the file reading process.
+
+</p>
+<br>
+
+### Into the code
+
+The code for the `get_next_line` project involves several important elements. Firstly, the use of `ssize_t` is highlighted, which is a data type capable of storing either a byte count or an error indication (-1), making it suitable for functions that perform read operations or return sizes. It's specifically designed to accommodate the range of values from -1 to SSIZE_MAX, ensuring that both successful outcomes and errors can be effectively communicated. The `read` function, with the prototype `ssize_t read(int fd, void *buf, size_t count);`, is essential for reading data from a file descriptor into a buffer. It returns the number of bytes read, which can be zero at the end of the file or -1 in case of an error, with `count` specifying the maximum number of bytes to read. This function is crucial for file I/O operations, allowing for direct interaction with files at a low level. Additionally, the `open` function is used to open files for reading, writing, or both, identified by a file descriptor—a small, non-negative integer. The function's syntax, `int open(const char *pathname, int flags);`, includes a pathname to the target file and flags that determine the file access mode. Flags like `O_RDONLY` for read-only access are combined using the `|` operator to specify multiple options. These elements are integral to the project, facilitating direct and efficient manipulation of files within the C programming environment.
+
+</p>
+<br>
+
+## Evaluation Process
 
 ### Testing mandatory part
 
 <p align="justify">
-You only have to edit the get_next_line.c file and uncomment the main. The get_next_line function will read the `file.txt` file that I made. Then simply run this command (change "xx" with desired buffer size):
+
+To test the mandatory part of the project, you only need to edit the `get_next_line.c` file and uncomment the main function. The `get_next_line` function will read from the `file.txt` file provided. To compile and run the program, use the following command (replace "xx" with the desired buffer size):
 
 ```shell
 gcc -Wall -Werror -Wextra -D BUFFER_SIZE=xx get_next_line.c get_next_line_utils.c && ./a.out
 ```
 
-But also try the code without the flag `-D BUFFER_SIZE=xx` because must works in both situation.
+Additionally, ensure that the code works without the `-D BUFFER_SIZE=xx` flag, as it must function correctly in both scenarios.
 
 ```shell
 gcc -Wall -Werror -Wextra get_next_line.c get_next_line_utils.c && ./a.out
 ```
 
-To find leaks and error I used `Valgrid`. First step is the installation:
+### Memory Leak Detection with Valgrind
+
+To find memory leaks and errors, I used `Valgrind`. Below are the steps for installation and usage:
+
+#### Installation
+
+Depending on your Linux distribution, use one of the following commands to install Valgrind:
 
 ```shell
 sudo apt install valgrind  # Ubuntu, Debian, etc.
@@ -204,46 +369,19 @@ sudo pacman -Syu valgrind  # Arch, Manjaro, Garuda, etc.
 sudo pkg ins valgrind      # FreeBSD
 ```
 
-The syntax is:
+#### Usage
+
+To check for memory leaks and errors, use the following Valgrind command:
+
 ```shell
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./a.out
 ```
 
-The flags are:
-1. `--leak-check=full`: "each individual leak will be shown in detail"
-2. `--show-leak-kinds=all`: Show all of "definite, indirect, possible, reachable" leak kinds in the "full" report
-3. `--track-origins=yes`: Favor useful output over speed. This tracks the origins of uninitialized values, which could be very useful for memory errors. Consider turning off if Valgrind is unacceptably slow
-4. `-s`: for the list of detected and suppressed errors
-5. ADDITIONAL `--log-file`: Write to a file. Useful when output exceeds terminal space
-
-The output is:
-
-```shell
-==15214== Memcheck, a memory error detector
-==15214== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==15214== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==15214== Command: ./a.out
-==15214==
-line [01]: ciao
-line [02]: come va
-line [03]: prova
-line [04]: daje
-line [05]: 1234
-line [06]: daje
-line [07]: try again
-line [08]:
-line [09]: uuuh
-line [10]: UANM
-line [11]: 1w3erw1312as
-line [12]: dsaijkakowdwaline [13]: (null)line [14]: (null)==15214==
-==15214== HEAP SUMMARY:
-==15214==     in use at exit: 0 bytes in 0 blocks
-==15214==   total heap usage: 125 allocs, 125 frees, 1,653 bytes allocated
-==15214==
-==15214== All heap blocks were freed -- no leaks are possible
-==15214==
-==15214== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-```
+- `--leak-check=full`: Perform a detailed memory leak check.
+- `--show-leak-kinds=all`: Show all kinds of leaks, including definitely lost, indirectly lost, possibly lost, and still reachable.
+- `--track-origins=yes`: Track the origins of uninitialized values.
+- `-s`: Provide a summary of the leak check.
+- ADDITIONAL `--log-file`: Directs Valgrind's output to a specified file. This is useful for preserving extensive output that exceeds terminal capacity, allowing for easier review and analysis.
 
 </p>
 <br>
@@ -252,114 +390,54 @@ line [12]: dsaijkakowdwaline [13]: (null)line [14]: (null)==15214==
 
 <p align="justify">
 
-You only have to edit the get_next_line_bonus.c file and uncomment the main. The get_next_line function will read the `file.txt, file2.txt, file3.txt` files that I made. Then simply run this command (change "xx" with desired buffer size):
+To test the bonus part of the project, follow these steps:
+
+1. Edit the `get_next_line_bonus.c` file and uncomment the main function.
+2. The `get_next_line` function will read from the `file.txt`, `file2.txt`, and `file3.txt` files provided.
+
+To compile and run the program, use the following command (replace "xx" with the desired buffer size):
 
 ```shell
 gcc -Wall -Werror -Wextra -D BUFFER_SIZE=xx get_next_line_bonus.c get_next_line_utils_bonus.c
 ```
 
-But also try the code without the flag `-D BUFFER_SIZE=xx` because must works in both situation.
-
-To find leaks and error I used `Valgrid`.
-
-The syntax is:
-
-```shell
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./a.out
-```
-
-The output is:
-
-```shell
-==13441== Memcheck, a memory error detector
-==13441== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==13441== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==13441== Command: ./a.out
-==13441==
-line [01]: /=∂/\/\[](_)§ /\/\@|V †|-|@ ̄| ̄/-/!570®1<|-\£1_`/ ¢@/\/\ε vv!7}{ ???
-line [01]: 2222222222222222
-line [01]: 333333333333333333333
-line [02]: ciao
-line [02]: 22
-line [02]: 33
-line [03]: come va
-line [03]: 22
-line [03]: 3
-line [04]: prova
-line [04]: 222222222222
-line [04]:
-line [05]: daje
-line [05]: 222222222222
-line [05]: 33333333333333333333333
-line [06]: 1234
-line [06]: 22222222222222
-line [06]: 333333333333
-line [07]: daje
-line [07]:
-line [07]: 33333333333333333
-line [08]: try again
-line [08]: 2222222222222
-line [08]: 33333333333
-line [09]:
-line [09]: 2222
-line [09]: 33333333333
-line [10]: uuuh
-line [10]: 222222222222222
-line [10]: 3333333
-line [11]: UANM
-line [11]: 2222
-line [11]: 333333
-line [12]: 1w3erw1312as
-line [12]: 222222
-line [12]: 3333
-line [13]: dsaijkakowdwaline [13]: 2222222222line [13]: 333line [14]: (null)line [14]: (null)line [14]: (null)==13441==
-==13441== HEAP SUMMARY:
-==13441==     in use at exit: 0 bytes in 0 blocks
-==13441==   total heap usage: 133 allocs, 133 frees, 46,037 bytes allocated
-==13441==
-==13441== All heap blocks were freed -- no leaks are possible
-==13441==
-==13441== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-```
+Additionally, ensure that the code works without the `-D BUFFER_SIZE=xx` flag, as it must function correctly in both scenarios.
 
 </p>
-
 <br>
 
-### Tester
+### Testing with gnlTester
 
 <p align="justify">
 
-I used the [gnlTester](https://github.com/Tripouille/gnlTester) made by [Tripouille](https://github.com/Tripouille). It is very easy to use:
+I utilized the [gnlTester](https://github.com/Tripouille/gnlTester) developed by [Tripouille](https://github.com/Tripouille) for testing. It's straightforward to use:
 
-1. Make sure that you are in the path of the folder `get_next_line` (e.g. ```~/fcorvaro/Desktop/get_next_line```)
+1. Navigate to your `get_next_line` directory (e.g., `~/fcorvaro/Desktop/get_next_line`).
 
-2. Use the command `git clone` and clone the folder into your `get_next_line` folder
+2. Clone the gnlTester repository into your `get_next_line` directory using:
 
-```shell
-git clone git@github.com:Tripouille/gnlTester.git
-```
+  ```shell
+  git clone git@github.com:Tripouille/gnlTester.git
+  ```
 
-3. Then `cd gnlTester`
+3. Change directory to  `gnlTester`
 
-4. Run the test with:
+4. Execute the tests with one of the following commands:
 
-```shell
-make m # launch mandatory tests
-make b # launch bonus tests
-make a # launch mandatory tests + bonus tests
-```
+  ```shell
+  make m # to run mandatory tests.
+  make b # to run bonus tests.
+  make a # to run mandatory tests and bonus tests.
+  ```
 
-Keep in mind that you can change the timeout value in Makefile. For rigorous test you should run all tests with valgrid using Linux (e.g. `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s make m`). The tester, for me, worked only in 42. Pay attetion, the tester is NOT the assolute truth, just a second check to the previosly done.
+Keep in mind that you can adjust the timeout value in the Makefile for more thorough testing. For a comprehensive evaluation, consider running all tests with Valgrind on Linux (e.g., `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s make m`). Remember, while this tester is a useful tool for validation, it should not be considered the definitive measure of correctness.
 
-The output should be: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/output.txt)
+The expected output can be found here: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/output.txt)
 
 </p>
-
 <br>
 
-
-### Correction sheet
+### Correction Sheet
 
 <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
 
@@ -369,60 +447,16 @@ The output should be: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/bl
 
 <br>
 
-### Norminette Result
+### Moulinette Feedback
 
-```shell
-get_next_line.c: OK!
-get_next_line.h: OK!
-get_next_line_bonus.c: OK!
-get_next_line_utils_bonus.c: OK!
-get_next_line_utils.c: OK!
-get_next_line_bonus.h: OK!
-```
-<br>
-
-### Moulinette Result
+<p align="justify"> 
 
 <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/Moulinette_gnl.png">
-
-<br>
-
-## Treasure hunt
-
-<p align="justify">
-
-The code
-
-```
-/=∂/\/\[](_)§ /\/\@|V †|-|@¯|¯ /-/!570®1<|-\£1_`/ ¢@/\/\ε vv!7}{ ???
-```
-
-is made for the trasure hunt. The code you provided is in ASCII art, a type of digital art that uses ASCII characters to create images. The code represents an image of a tree with a bird's nest.
-
-```
-  / /)
- * / /
-    ~~
-    ~~
-```
 
 </p>
 <br>
 
-
-## Support Me
-
-<p align="justify">
-Remember to ⭐ the repository.
-If you want to support me:</p>
-
-<p align="center">
-<a href="https://ko-fi.com/fcorvaro"><img width="180" img align="center" src="https://github.com/f-corvaro/42.common_core/blob/main/.extra/support-me-ko-fi.svg"><alt=""></a>
-<a href="https://github.com/sponsors/f-corvaro"><img width="180" img align="center" src="https://github.com/f-corvaro/42.common_core/blob/main/.extra/support-me-github.svg"><alt=""></a>
-
-<br>
-
-## Skills developed
+## Developed Skills
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -430,11 +464,26 @@ If you want to support me:</p>
   </a>
 </p><br>
 
-## Sources
+## References
 
-1. [Static variable](https://www.geeksforgeeks.org/static-variables-in-c/)
-2. [C memory](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
-3. [Valgrid](https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
+- [Understanding Static Variables in C](https://www.geeksforgeeks.org/static-variables-in-c/)
+- [Exploring Memory Layout in C Programs](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
+- [Using Valgrind to Identify Memory Leaks](https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks)
+
+I used additional references but do not recall their specific sources.
+
+<br>
+
+## Support and Contributions
+
+<p align="center">
+If you find this repository helpful, please consider starring it to show your support. Your support is greatly appreciated!</p>
+
+<p align="center">
+<a href="https://ko-fi.com/fcorvaro"><img width="180" img align="center" src="https://github.com/f-corvaro/42.common_core/blob/main/.extra/support-me-ko-fi.svg"><alt=""></a>
+<a href="https://github.com/sponsors/f-corvaro"><img width="180" img align="center" src="https://github.com/f-corvaro/42.common_core/blob/main/.extra/support-me-github.svg"><alt=""></a>
+
+<br>
 
 ## Author
 
