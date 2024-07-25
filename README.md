@@ -21,7 +21,7 @@ v10 | v12
 </div>
 
 <div align="center">
-<table><tr><td>This guide is made for the subject v10, there aren't differences between the two subjects</td></tr></table>
+<table><tr><td>This guide is for subject v10. There are no differences between the two subjects.</td></tr></table>
 </div>
 
 </p>
