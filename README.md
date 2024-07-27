@@ -57,7 +57,7 @@ v10 | v12
  <a href="#static-variables">Static Variables</a><br>
  <a href="#code-optimization">Code Optimization</a><br>
  <a href="#into-the-code">Into the code</a><br>
- <a href="#evaluation">Evaluation</a><br>
+ <a href="#evaluation-process">Evaluation Process</a><br>
  <a href="#testing-mandatory-part">Testing mandatory part</a><br>
  <a href="#testing-bonus-part">Testing bonus part</a><br>
  <a href="#testing-with-gnltester">Testing with gnlTester</a><br>
@@ -439,12 +439,15 @@ The expected output can be found here: [output.txt](https://github.com/f-corvaro
 
 ### Correction Sheet
 
-<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
-
-<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
-
+<p align="center">
+ <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
+</p>
+<p align="center">
+ <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
+</p>
+<p align="center">
 <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs3.png">
-
+</p>
 <br>
 
 ### Moulinette Feedback
