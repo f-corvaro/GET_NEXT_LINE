@@ -12,21 +12,6 @@
     <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/f-corvaro/GET_NEXT_LINE?color=yellow" /></a>
 </p>
 
-<div align="center">
-
-v10 | v12
-:-------------------------:|:-------------------------:
-[![subject-old](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject.pdf) | [![subject-new](https://img.shields.io/badge/subject-get_next_line-blueviolet)](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/en.subject(new).pdf)
-
-</div>
-
-<div align="center">
-<table><tr><td>This guide is for subject v10. There are no differences between the two subjects.</td></tr></table>
-</div>
-
-</p>
-<br>
-
 <h3 align="center">Index</h3>
 
 <p align="center">
@@ -61,7 +46,6 @@ v10 | v12
  <a href="#testing-mandatory-part">Testing mandatory part</a><br>
  <a href="#testing-bonus-part">Testing bonus part</a><br>
  <a href="#testing-with-gnltester">Testing with gnlTester</a><br>
- <a href="#correction-sheet">Correction Sheet</a><br>
  <a href="#moulinette-feedback">Moulinette Feedback</a><br>
  <a href="#developed-skills">Developed Skills</a><br>
  <a href="#references">References</a><br>
@@ -434,19 +418,6 @@ Keep in mind that you can adjust the timeout value in the Makefile for more thor
 
 The expected output can be found here: [output.txt](https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/output.txt)
 
-</p>
-<br>
-
-### Correction Sheet
-
-<p align="center">
- <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs1.png">
-</p>
-<p align="center">
- <a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs2.png">
-</p>
-<p align="center">
-<a href="https://github.com/f-corvaro/GET_NEXT_LINE"><img width="650" src="https://github.com/f-corvaro/GET_NEXT_LINE/blob/main/.extra/cs3.png">
 </p>
 <br>
 
